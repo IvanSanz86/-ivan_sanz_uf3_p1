@@ -2,3 +2,9 @@
 /.fleet
 /.idea
 /.vscode
+/storage/app/public
+/bootstrap/cache/*
+/storage/logs/*
+/storage/*
+.env
+/node_modules

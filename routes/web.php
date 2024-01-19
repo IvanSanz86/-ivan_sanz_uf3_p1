@@ -25,7 +25,20 @@ Route::middleware('year')->group(function() {
         Route::get('oldFilms/{year?}',[FilmController::class, "listOldFilms"])->name('oldFilms');
         Route::get('newFilms/{year?}',[FilmController::class, "listNewFilms"])->name('newFilms');
         Route::get('films/{year?}/{genre?}',[FilmController::class, "listFilms"])->name('listFilms');
+        Route::get('filmsByYear/{year?}',[FilmController::class, "listFilmsByYear"])->name('filmsByYear');
+        Route::get('filmsByGenre/{genre?}',[FilmController::class, "listFilmsByGenre"])->name('filmsByGenre');
+        Route::get('sortFilms/{year?}',[FilmController::class, "listSortFilms"])->name('sortFilms');
+        Route::get('countFilms',[FilmController::class, "listCountFilms"])->name('countFilms');
+
     });
 });
+
+Route::middleware('validate.url')->group(function() {
+    Route::group(['prefix'=>'filmin'], function(){
+        Route::post('createFilm/', [FilmController::class, 'createFilm'])->name('createFilm');
+    });
+});
+    
+
 
 
