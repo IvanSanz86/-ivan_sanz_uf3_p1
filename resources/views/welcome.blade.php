@@ -11,6 +11,8 @@
         <li class="list-group-item"><a href="/filmout/filmsByGenre">Películas por género</a></li>
         <li class="list-group-item"><a href="/filmout/sortFilms">Películas por año descendente</a></li>
         <li class="list-group-item"><a href="/filmout/countFilms">Contador de películas</a></li>
+        <li class="list-group-item"><a href="{{ route('actors.index') }}">Listado de Actores</a></li>
+        <li class="list-group-item"><a href="{{ route('actors.count') }}">Contador de Actores</a></li>
     </ul>
 
     @if(session('error'))
@@ -53,6 +55,21 @@
         </div>
 
         <button type="submit" class="btn btn-secondary">Enviar</button>
+    </form>
+
+    <form action="{{ route('actors.listByDecade') }}" method="GET">
+        <label for="decade">Selecciona una década:</label>
+        <select name="decade" id="decade">
+            <option value="1950">1950s</option>
+            <option value="1960">1960s</option>
+            <option value="1970">1970s</option>
+            <option value="1980">1980s</option>
+            <option value="1990">1990s</option>
+            <option value="2000">2000s</option>
+            <option value="2010">2010s</option>
+            <option value="2020">2020s</option>
+        </select>
+        <button type="submit">Buscar</button>
     </form>
 </div>
 @endsection

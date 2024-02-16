@@ -11,6 +11,7 @@
         }
         header {
             height: 30%;
+            margin-left: -10%;
             background-color: #D3D3D3;
             padding: 20px 0;
             text-align: center;
@@ -24,9 +25,9 @@
             bottom: 0;
             width: 100%;
         }
-        img {
-            width: 100%;
-            height: 100%;
+        #imagen {
+            width: 30%;
+            height: 30%;
         }
     </style>
 
