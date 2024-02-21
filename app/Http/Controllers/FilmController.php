@@ -189,6 +189,7 @@ class FilmController extends Controller
     }
 
 
+
     public function isFilm($name): bool
     {
         $films = FilmController::readFilms();
